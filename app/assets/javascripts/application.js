@@ -10,14 +10,16 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-
+//= require jquery
+//= require jquery_ujs
+//= require turbolinks
 //= require jquery/dist/jquery
 //= require jquery-deparam/jquery-deparam
 //= require jquery-cookie/jquery.cookie
 //= require pubsub-js/src/pubsub
 //= require j-toker/dist/jquery.j-toker
 //= require bootstrap/dist/js/bootstrap
-//= require_tree .
+//= require_tree ./channels
 
  $.auth.configure({
   // By default, you only need to configure apiUrl

@@ -9,6 +9,8 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
 require "sprockets/railtie"
+require "action_cable"
+require "action_cable/engine"
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -17,6 +19,7 @@ Bundler.require(*Rails.groups)
 
 module Project3Type
   class Application < Rails::Application
+    config.autoload_paths += %W(#{config.root}/app/channels)
     config.middleware.insert_before 0, "Rack::Cors" do
       allow do
         origins '*' # Control the domains
